@@ -1,0 +1,21 @@
+% The interaction between 2 coherent beams at a screen is know as inteference.
+% A beam is called coherent when the phase relationship between the electric field values
+% at different locations or times is fixed
+% Young's double slit experiment creates two beams by splitting a single beam.
+
+N = 100;
+x = -.5:1/(N-1):0.5;
+y = x;
+[X,Y] = meshgrid(x,y);
+lambda = 0.633;
+k = 2*pi/lambda;
+theta = pi/3;
+
+E1 = exp(1i*0);
+E2 = exp(1i*k*x*cos(theta));
+
+E = (E1 + E2) .* conj(E1 + E2);
+figure();
+imagesc(E);
+colrmap gray;
+colorbar;
