@@ -1,4 +1,3 @@
-clc;
 x = -5:0.1:5;
 y = x;
 l = length(x);
